@@ -15,10 +15,10 @@ from fooocusapi.routes.generate_v1 import secure_router as generate_v1
 from fooocusapi.routes.generate_v2 import secure_router as generate_v2
 from fooocusapi.routes.query import secure_router as query
 from fooocusapi.utils.img_utils import convert_image
-
+from fooocusapi.utils.monitor import ActivityMonitorMiddleware
 
 app = FastAPI()
-
+app.add_middleware(ActivityMonitorMiddleware)
 logging.basicConfig(level=logging.DEBUG)
 
 
